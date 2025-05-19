@@ -1,0 +1,55 @@
+.project-info {
+  color: #888;
+  margin-top: 20px;
+}
+
+.movie-search {
+  font-size: 80px;
+  margin-top: 30px;
+}
+
+.form-control-lg {
+  background-color: #333;
+  color: white;
+  border: 1px solid #555;
+}
+
+.form-control-lg:focus,
+.form-control-lg:active {
+  outline: none;
+  box-shadow: none;
+  border-color: #a1a1a1;
+  background-color: #525252;
+  color: white;
+}
+
+.form-control-lg::placeholder {
+  color: #888;
+}
+
+.input-wrapper {
+  position: relative;
+}
+
+.movie-title-search {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 18px;
+}
+
+a {
+  color: #888;
+}
+
+/* .icon-hover {
+  font-size: 40px;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.icon-hover:hover {
+  transform: scale(3);
+  color: #a1a1a1;
+} */

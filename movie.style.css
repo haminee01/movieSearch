@@ -1,0 +1,18 @@
+body {
+  background-color: rgb(24, 24, 24);
+  color: white;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+}
+
+.nav-profile {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid #8a8a8a;
+  background-color: #626262;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  padding-bottom: 5px;
+  margin: 5px;
+}
