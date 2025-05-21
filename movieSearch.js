@@ -3428,7 +3428,10 @@ function movieSearch() {
   );
 
   if (results.length === 0) {
-    movieSearchElement.innerHTML = "<p>No search results.</p>";
+    movieSearchElement.innerHTML = `
+    <div class="alert" style="border: 1px solid rgb(131, 131, 131); color:rgb(166, 166, 166);" role="alert">
+      No search results!
+    </div>`;
     return;
   }
 
