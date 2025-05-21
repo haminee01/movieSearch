@@ -77,70 +77,74 @@
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg custom-navbar" data-bs-theme="dark">
-    <div class="container-fluid">
-      <a class="navbar-brand ms-2" href="movieSearchPage.html">MovieSearch</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="movieSearchPage.html">Search</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="movieDetailPage.html">Movie</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="aboutPage.html">About</a>
-          </li>
-        </ul>
-        <div class="d-flex nav-profile"></div>
+  <header>
+    <nav class="navbar navbar-expand-lg custom-navbar" data-bs-theme="dark">
+      <div class="container-fluid">
+        <a class="navbar-brand ms-2" href="movieSearchPage.html">MovieSearch</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="movieSearchPage.html">Search</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="movieDetailPage.html">Movie</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="aboutPage.html">About</a>
+            </li>
+          </ul>
+          <div class="d-flex nav-profile"></div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <div class="image-wrapper">
+      <img
+        src="https://talkimg.imbc.com/TVianUpload/tvian/TViews/image/2024/06/17/53bc0c92-e197-416d-8517-56d5fd971c15.png"
+        alt="Inside Out 2">
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col mt-5">
+          <img src="https://image.tmdb.org/t/p/w440_and_h660_face/vpnVM9B6NMmQpWeZvzLvDESb2QY.jpg"
+            class="img-fluid d-block" alt="Inside Out 2" style="max-width: 100%; height: auto;">
+        </div>
+        <div class="col mt-5">
+          <h1 class="fw-bold" style="font-size: 70px;">Inside Out 2</h1>
+          <div class="mt-5 text-warning">Release Date: 2024-06-11</div>
+          <div class="mt-3 row">
+            <div class="col">
+              <div class="fs-5 mb-1">Popularity</div>
+              <div><i class="fa-solid fa-heart"></i> 48.1441</div>
+            </div>
+            <div class="col">
+              <div class="fs-5 mb-1">Vote average</div>
+              <div><i class="fa-solid fa-check-to-slot"></i> 7.554</div>
+            </div>
+          </div>
+          <div class="mt-3 mb-5 text-secondary">
+            Teenager Riley's mind headquarters is undergoing a sudden demolition to make room for something entirely
+            unexpected: new Emotions! Joy, Sadness, Anger, Fear and Disgust, who’ve long been running a successful
+            operation by all accounts, aren’t sure how to feel when Anxiety shows up. And it looks like she’s not alone.
+          </div>
+          <canvas id="myChart" width="400" height="200" class="mb-5"></canvas>
+          <a href="https://www.youtube.com/watch?v=LEjhY15eCx0" target="_blank">Trailer</a>
+        </div>
       </div>
     </div>
-  </nav>
 
-  <div class="image-wrapper">
-    <img
-      src="https://talkimg.imbc.com/TVianUpload/tvian/TViews/image/2024/06/17/53bc0c92-e197-416d-8517-56d5fd971c15.png"
-      alt="Inside Out 2">
-  </div>
-
-  <div class="container">
-    <div class="row">
-      <div class="col mt-5">
-        <img src="https://image.tmdb.org/t/p/w440_and_h660_face/vpnVM9B6NMmQpWeZvzLvDESb2QY.jpg"
-          class="img-fluid d-block" alt="Inside Out 2" style="max-width: 100%; height: auto;">
-      </div>
-      <div class="col mt-5">
-        <h1 class="fw-bold" style="font-size: 70px;">Inside Out 2</h1>
-        <div class="mt-5 text-warning">Release Date: 2024-06-11</div>
-        <div class="mt-3 row">
-          <div class="col">
-            <div class="fs-5 mb-1">Popularity</div>
-            <div><i class="fa-solid fa-heart"></i> 48.1441</div>
-          </div>
-          <div class="col">
-            <div class="fs-5 mb-1">Vote average</div>
-            <div><i class="fa-solid fa-check-to-slot"></i> 7.554</div>
-          </div>
-        </div>
-        <div class="mt-3 mb-5 text-secondary">
-          Teenager Riley's mind headquarters is undergoing a sudden demolition to make room for something entirely
-          unexpected: new Emotions! Joy, Sadness, Anger, Fear and Disgust, who’ve long been running a successful
-          operation by all accounts, aren’t sure how to feel when Anxiety shows up. And it looks like she’s not alone.
-        </div>
-        <canvas id="myChart" width="400" height="200" class="mb-5"></canvas>
-        <a href="https://www.youtube.com/watch?v=LEjhY15eCx0" target="_blank">Trailer</a>
-      </div>
+    <div class="container">
+      <h1 class="mt-5 mb-4" style="font-family: 'Merriweather', serif;">Top 3 Popular Movies</h1>
+      <div class="row mt-5 text-center" id="movie-cards"></div>
     </div>
-  </div>
-
-  <div class="container">
-    <h1 class="mt-5 mb-4" style="font-family: 'Merriweather', serif;">Top 3 Popular Movies</h1>
-    <div class="row mt-5 text-center" id="movie-cards"></div>
-  </div>
+  </main>
 
   <footer class="text-center mt-5 mb-5">
     <a href="https://github.com/haminee01?tab=repositories" target="_blank">GitHub Repository.</a>
@@ -176,7 +180,8 @@
           borderWidth: 1
         }]
       }
-    });</script>
+    });
+  </script>
 </body>
 
 </html>

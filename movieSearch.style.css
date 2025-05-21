@@ -10,11 +10,9 @@
   font-family: 'Merriweather', serif;
 
   background: linear-gradient(90deg, #e7a430, #6e695e);
-  /* 원하는 색상 지정 */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 
-  /* Optional for better compatibility */
   background-clip: text;
   color: transparent;
 }

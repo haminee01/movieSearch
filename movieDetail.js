@@ -3396,9 +3396,7 @@ const movieList = {
   total_results: 1008061,
 };
 
-// 현재 페이지 파일명 추출
 const currentPage = window.location.pathname.split("/").pop();
-// 모든 nav-link 요소 가져오기
 const navLinks = document.querySelectorAll(".nav-link");
 
 navLinks.forEach(link => {
@@ -3422,7 +3420,6 @@ const top3 = movieList.results
 
 let count = 1
 
-// 카드 동적으로 생성 및 추가
 top3.forEach(movie => {
   const col = document.createElement("div");
   col.className = "col";

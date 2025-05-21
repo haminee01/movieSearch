@@ -3396,16 +3396,14 @@ const movieList = {
   total_results: 1008061,
 };
 
-// 현재 페이지 파일명 추출
 const currentPage = window.location.pathname.split("/").pop();
-// 모든 nav-link 요소 가져오기
 const navLinks = document.querySelectorAll(".nav-link");
 
 navLinks.forEach(link => {
   const linkPage = link.getAttribute("href");
 
   if (linkPage === currentPage) {
-    link.classList.add("text-warning", "fw-bold"); // 선택된 메뉴 강조
+    link.classList.add("text-warning", "fw-bold");
   } else {
     link.classList.remove("text-warning", "fw-bold");
   }

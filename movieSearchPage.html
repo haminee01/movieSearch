@@ -36,77 +36,82 @@
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg custom-navbar" data-bs-theme="dark">
-    <div class="container-fluid">
-      <a class="navbar-brand ms-2" href="movieSearchPage.html">MovieSearch</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="movieSearchPage.html">Search</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="movieDetailPage.html">Movie</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="aboutPage.html">About</a>
-          </li>
-        </ul>
-        <div class="d-flex nav-profile"></div>
-      </div>
-    </div>
-  </nav>
-  <div class="container">
-    <div class="text-center">
-      <div class="movie-search">Movie Search</div>
-      <h5 class="project-info">Movie Search Site Project
-        Users can search for movies and get detailed information about them.</h5>
-    </div>
-  </div>
-  <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img src="/img/img3.jpg" class="d-block w-100" alt="img1" style="height: 300px; object-fit: cover;">
-      </div>
-      <div class="carousel-item">
-        <img src="/img/img4.jpg" class="d-block w-100" alt="img2" style="height: 300px; object-fit: cover;">
-      </div>
-      <div class="carousel-item">
-        <img src="/img/img2.jpg" class="d-block w-100" alt="img3" style="height: 300px; object-fit: cover;">
-      </div>
-    </div>
-  </div>
-
-  <div class="container mt-5">
-    <div class="input-wrapper">
-      <input class="form-control form-control-lg" type="text" id="searchInput" placeholder="Movie Title"
-        aria-label="Movie Title" onkeydown="checkEnter(event)">
-      <i class="fa-solid fa-magnifying-glass movie-title-search" onclick="movieSearch()"></i>
-    </div>
-    <div class="movie-group row mt-3" id="movieSearch"></div>
-  </div>
-
-  <!-- Bootstrap 모달 -->
-  <div class="modal fade" id="movieDetailModal" tabindex="-1" aria-labelledby="movieDetailLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg modal-dialog-centered">
-      <div class="modal-content bg-dark text-white">
-        <div class="modal-header">
-          <h2 class="modal-title" id="movieDetailLabel"></h2>
-          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+  <header>
+    <nav class="navbar navbar-expand-lg custom-navbar" data-bs-theme="dark">
+      <div class="container-fluid">
+        <a class="navbar-brand ms-2" href="movieSearchPage.html">MovieSearch</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="movieSearchPage.html">Search</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="movieDetailPage.html">Movie</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="aboutPage.html">About</a>
+            </li>
+          </ul>
+          <div class="d-flex nav-profile"></div>
         </div>
-        <div class="modal-body">
-          <img id="moviePoster" src="" class="img-fluid mb-3" style="height: 500px; object-fit: cover;" alt="">
-          <p id="movieOverview" style="color: rgb(176, 176, 176);"></p>
-          <p><strong>Release Date:</strong> <span id="movieReleaseDate" style="color: rgb(176, 176, 176);"></span></p>
-          <p><strong>Vote Average:</strong> <span id="movieVote" style="color: rgb(176, 176, 176);"></span></p>
-          <p><strong>Adult:</strong> <span id="movieAdult" style="color: rgb(176, 176, 176);"></span></p>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <div class="container">
+      <div class="text-center">
+        <div class="movie-search">Movie Search</div>
+        <h5 class="project-info">Movie Search Site Project
+          Users can search for movies and get detailed information about them.</h5>
+      </div>
+    </div>
+    <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="/img/img3.jpg" class="d-block w-100" alt="img1" style="height: 300px; object-fit: cover;">
+        </div>
+        <div class="carousel-item">
+          <img src="/img/img4.jpg" class="d-block w-100" alt="img2" style="height: 300px; object-fit: cover;">
+        </div>
+        <div class="carousel-item">
+          <img src="/img/img2.jpg" class="d-block w-100" alt="img3" style="height: 300px; object-fit: cover;">
         </div>
       </div>
     </div>
-  </div>
+
+    <div class="container mt-5">
+      <div class="input-wrapper">
+        <input class="form-control form-control-lg" type="text" id="searchInput" placeholder="Movie Title"
+          aria-label="Movie Title" onkeydown="checkEnter(event)">
+        <i class="fa-solid fa-magnifying-glass movie-title-search" onclick="movieSearch()"></i>
+      </div>
+      <div class="movie-group row mt-3" id="movieSearch"></div>
+    </div>
+
+    <!-- Bootstrap 모달 -->
+    <div class="modal fade" id="movieDetailModal" tabindex="-1" aria-labelledby="movieDetailLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content bg-dark text-white">
+          <div class="modal-header">
+            <h2 class="modal-title" id="movieDetailLabel"></h2>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <img id="moviePoster" src="" class="img-fluid mb-3" style="height: 500px; object-fit: cover;" alt="">
+            <p id="movieOverview" style="color: rgb(176, 176, 176);"></p>
+            <p><strong>Release Date:</strong> <span id="movieReleaseDate" style="color: rgb(176, 176, 176);"></span></p>
+            <p><strong>Vote Average:</strong> <span id="movieVote" style="color: rgb(176, 176, 176);"></span></p>
+            <p><strong>Adult:</strong> <span id="movieAdult" style="color: rgb(176, 176, 176);"></span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
 
   <footer class="text-center mt-5 mb-5">
     <a href="https://github.com/haminee01?tab=repositories" target="_blank">GitHub Repository.</a>

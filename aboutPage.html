@@ -64,59 +64,62 @@
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg custom-navbar" data-bs-theme="dark">
-    <div class="container-fluid">
-      <a class="navbar-brand ms-2" href="movieSearchPage.html">MovieSearch</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="movieSearchPage.html">Search</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="movieDetailPage.html">Movie</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="aboutPage.html">About</a>
-          </li>
-        </ul>
-        <div class="d-flex nav-profile"></div>
-      </div>
-    </div>
-  </nav>
-
-  <div class="flair flair--3"></div>
-
-
-  <div class="container d-flex justify-content-center align-items-center">
-    <div class="text-center">
-      <a href="movieSearchPage.html" class="text-decoration-none text-reset">
-        <div class="card mb-5 mt-5" style="width: 900px;" data-bs-theme="dark">
-          <img src="/img/img3.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Movie Search</h5>
-            <p class="card-text">
-              Users can search for movies and get detailed information about them.</p>
-            <p class="card-text"><small class="text-body-secondary">Movie Search Site Project</small></p>
-          </div>
+  <header>
+    <nav class="navbar navbar-expand-lg custom-navbar" data-bs-theme="dark">
+      <div class="container-fluid">
+        <a class="navbar-brand ms-2" href="movieSearchPage.html">MovieSearch</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="movieSearchPage.html">Search</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="movieDetailPage.html">Movie</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="aboutPage.html">About</a>
+            </li>
+          </ul>
+          <div class="d-flex nav-profile"></div>
         </div>
-      </a>
-      <h1 class="pb-3 pt-5">haminee01 / LeeHaMin</h1>
-      <div id="demo" class="gsap mb-5">
-        <div class="box green"></div>
-        <div class="box purple"></div>
-        <div class="box orange"></div>
-        <div class="box green"></div>
-        <div class="box purple"></div>
-        <div class="box orange"></div>
-        <div class="box green"></div>
-        <div class="box purple"></div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <div class="flair flair--3"></div>
+
+    <div class="container d-flex justify-content-center align-items-center">
+      <div class="text-center">
+        <a href="movieSearchPage.html" class="text-decoration-none text-reset">
+          <div class="card mb-5 mt-5" style="width: 900px;" data-bs-theme="dark">
+            <img src="/img/img3.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Movie Search</h5>
+              <p class="card-text">
+                Users can search for movies and get detailed information about them.</p>
+              <p class="card-text"><small class="text-body-secondary">Movie Search Site Project</small></p>
+            </div>
+          </div>
+        </a>
+        <h1 class="pb-3 pt-5">haminee01 / LeeHaMin</h1>
+        <div id="demo" class="gsap mb-5">
+          <div class="box green"></div>
+          <div class="box purple"></div>
+          <div class="box orange"></div>
+          <div class="box green"></div>
+          <div class="box purple"></div>
+          <div class="box orange"></div>
+          <div class="box green"></div>
+          <div class="box purple"></div>
+        </div>
       </div>
     </div>
-  </div>
+  </main>
 
   <footer class="text-center mb-5">
     <h5 class="mt-5 mb-3"><i class="fa-solid fa-envelope"></i> gkmin22@gmail.com</h5>
@@ -137,15 +140,11 @@
       yTo(e.clientY);
     });
 
-
-    // 현재 페이지 파일명 추출
     const currentPage = window.location.pathname.split("/").pop();
-    // 모든 nav-link 요소 가져오기
     const navLinks = document.querySelectorAll(".nav-link");
 
     navLinks.forEach(link => {
       const linkPage = link.getAttribute("href");
-
       if (linkPage === currentPage) {
         link.classList.add("text-warning", "fw-bold");
       } else {
