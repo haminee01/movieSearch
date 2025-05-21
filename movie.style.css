@@ -16,3 +16,17 @@ body {
   padding-bottom: 5px;
   margin: 5px;
 }
+
+/* 사용자 정의 스타일 */
+.custom-navbar {
+  background-color: rgb(24, 24, 24);
+}
+
+.custom-navbar .navbar-brand,
+.custom-navbar .nav-link {
+  color: white;
+}
+
+.custom-navbar .nav-link:hover {
+  color: #ffd54f;
+}

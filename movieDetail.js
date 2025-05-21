@@ -3405,65 +3405,40 @@ navLinks.forEach(link => {
   const linkPage = link.getAttribute("href");
 
   if (linkPage === currentPage) {
-    link.classList.add("text-warning", "fw-bold"); // 선택된 메뉴 강조
+    link.classList.add("text-warning", "fw-bold");
   } else {
     link.classList.remove("text-warning", "fw-bold");
   }
 });
 
-// 엔터 키 입력 시 검색 실행
-function checkEnter(event) {
-  if (event.key === "Enter") {
-    movieSearch();
-  }
-}
+const imgBaseUrl = "https://image.tmdb.org/t/p/w500";
+const movieCardsContainer = document.getElementById("movie-cards");
 
-function movieSearch() {
-  const searchValue = document.getElementById("searchInput").value.toLowerCase();
-  const movieSearchElement = document.getElementById("movieSearch");
-  movieSearchElement.innerHTML = "";
+// popularity 기준 내림차순 정렬 후 상위 3개 추출
+const top3 = movieList.results
+  .filter(movie => movie.popularity !== undefined)
+  .sort((a, b) => b.popularity - a.popularity)
+  .slice(0, 3);
 
-  const results = movieList.results.filter((movie) =>
-    movie.original_title.toLowerCase().includes(searchValue)
-  );
+let count = 1
 
-  if (results.length === 0) {
-    movieSearchElement.innerHTML = "<p>No search results.</p>";
-    return;
-  }
+// 카드 동적으로 생성 및 추가
+top3.forEach(movie => {
+  const col = document.createElement("div");
+  col.className = "col";
 
-  results.forEach((movie) => {
-    const col = document.createElement("div");
-    col.classList.add("col-md-4", "mb-4");
-
-    const card = document.createElement("div");
-    card.classList.add("card", "h-100", "bg-dark", "text-white");
-    card.style.cursor = "pointer";
-
-    card.innerHTML = `
-    <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" class="card-img-top" alt="${movie.original_title}">
-    <div class="card-body">
-      <h5 class="card-title fs-2">${movie.original_title}</h5>
-      <p class="card-text text-secondary">${movie.overview}</p>
-      <p class="card-text text-secondary">Release Date: ${movie.release_date}</p>
-    </div>
-  `;
-
-    // 클릭 시 모달에 데이터 넣고 띄우기
-    card.addEventListener("click", () => {
-      document.getElementById("movieDetailLabel").innerText = movie.title;
-      document.getElementById("moviePoster").src = `https://image.tmdb.org/t/p/w500${movie.backdrop_path}`;
-      document.getElementById("moviePoster").alt = movie.title;
-      document.getElementById("movieOverview").innerText = movie.overview;
-      document.getElementById("movieReleaseDate").innerText = movie.release_date;
-      document.getElementById("movieVote").innerText = movie.vote_average;
-      document.getElementById("movieAdult").innerText = movie.adult ? "Yes" : "No";
-
-      const modal = new bootstrap.Modal(document.getElementById('movieDetailModal'));
-      modal.show();
-    });
-
-    col.appendChild(card);
-    movieSearchElement.appendChild(col);
-  })
-};
+  col.innerHTML = `
+        <div class="card text-bg-dark mb-4" style="width: 18rem;">
+          <div class="card-header text-center">
+            <strong>TOP ${count}</strong>
+          </div>
+          <img src="${imgBaseUrl + movie.poster_path}" class="card-img-top" alt="${movie.title}">
+          <div class="card-body">
+            <h5 class="card-title">${movie.title}</h5>
+            <p class="card-text text-secondary"><small>Popularity: ${movie.popularity.toFixed(1)}</small></p>
+          </div>
+        </div>
+      `;
+  count++
+  movieCardsContainer.appendChild(col);
+});

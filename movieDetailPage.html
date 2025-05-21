@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Movie Search Project</title>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet">
   <!-- Bootstrap 5 CDN (CSS) -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
@@ -27,43 +28,90 @@
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="movie.style.css" />
-  <link rel="stylesheet" href="/movieSearch.style.css" />
-  <script src="/movieSearch.js" defer></script>
+  <link rel="stylesheet" href="movieSearch.style.css" />
+  <script src="movieDetail.js" defer></script>
+
+  <style>
+    .image-wrapper {
+      position: relative;
+      width: 100%;
+      height: 700px;
+      overflow: hidden;
+    }
+
+    .image-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* 아래쪽 그라데이션 */
+    .image-wrapper::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 30%;
+      width: 100%;
+      background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.6) 100%);
+      z-index: 2;
+    }
+
+    /* 양옆 그라데이션 */
+    .image-wrapper::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background: linear-gradient(to right,
+          rgba(0, 0, 0, 0.4) 0%,
+          rgba(0, 0, 0, 0) 15%,
+          rgba(0, 0, 0, 0) 85%,
+          rgba(0, 0, 0, 0.4) 100%);
+      z-index: 1;
+    }
+  </style>
 </head>
 
 <body>
-  <header>
-    <nav class="navbar bg-dark navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
-      <div class="container-fluid">
-        <a class="navbar-brand ms-2" href="/movieSearchPage.html">Movie Search</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="/movieSearchPage.html">Search</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="/movieDetailPage.html">Movie</a>
-            </li>
-            <a class="nav-link active" aria-current="page" href="/aboutPage.html">About</a>
-            </li>
-          </ul>
-          <div class="d-flex nav-profile">
-            👩🏻
-          </div>
-        </div>
+  <nav class="navbar navbar-expand-lg custom-navbar" data-bs-theme="dark">
+    <div class="container-fluid">
+      <a class="navbar-brand ms-2" href="movieSearchPage.html">MovieSearch</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="movieSearchPage.html">Search</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="movieDetailPage.html">Movie</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="aboutPage.html">About</a>
+          </li>
+        </ul>
+        <div class="d-flex nav-profile"></div>
       </div>
-    </nav>
-  </header>
+    </div>
+  </nav>
+
+  <div class="image-wrapper">
+    <img
+      src="https://talkimg.imbc.com/TVianUpload/tvian/TViews/image/2024/06/17/53bc0c92-e197-416d-8517-56d5fd971c15.png"
+      alt="Inside Out 2">
+  </div>
 
   <div class="container">
     <div class="row">
       <div class="col mt-5">
-        <img src="https://image.tmdb.org/t/p/w440_and_h660_face/vpnVM9B6NMmQpWeZvzLvDESb2QY.jpg" class=" d-block"
-          alt="Inside Out 2" style="width: 500px; height: auto;">
+        <img src="https://image.tmdb.org/t/p/w440_and_h660_face/vpnVM9B6NMmQpWeZvzLvDESb2QY.jpg"
+          class="img-fluid d-block" alt="Inside Out 2" style="max-width: 100%; height: auto;">
       </div>
       <div class="col mt-5">
         <h1 class="fw-bold" style="font-size: 70px;">Inside Out 2</h1>
@@ -87,42 +135,48 @@
         <a href="https://www.youtube.com/watch?v=LEjhY15eCx0" target="_blank">Trailer</a>
       </div>
     </div>
+  </div>
 
-    <footer class="text-center mt-5">
-      <a href="https://github.com/haminee01?tab=repositories" target="_blank">GitHub Repository.</a>
-    </footer>
+  <div class="container">
+    <h1 class="mt-5 mb-4" style="font-family: 'Merriweather', serif;">Top 3 Popular Movies</h1>
+    <div class="row mt-5 text-center" id="movie-cards"></div>
+  </div>
 
-    <script>
-      const ctx = document.getElementById('myChart').getContext('2d');
-      new Chart(ctx, {
-        type: 'bar',
-        data: {
-          labels: ['June', 'July', 'August'],
-          datasets: [{
-            label: 'Votes',
-            data: [2.53, 3.72, 1.304],
-            backgroundColor: [
-              'rgba(255, 99, 132, 0.2)',
-              'rgba(255, 159, 64, 0.2)',
-              'rgba(255, 205, 86, 0.2)',
-              'rgba(75, 192, 192, 0.2)',
-              'rgba(54, 162, 235, 0.2)',
-              'rgba(153, 102, 255, 0.2)',
-              'rgba(201, 203, 207, 0.2)'
-            ],
-            borderColor: [
-              'rgb(255, 99, 132)',
-              'rgb(255, 159, 64)',
-              'rgb(255, 205, 86)',
-              'rgb(75, 192, 192)',
-              'rgb(54, 162, 235)',
-              'rgb(153, 102, 255)',
-              'rgb(201, 203, 207)'
-            ],
-            borderWidth: 1
-          }]
-        }
-      });</script>
+  <footer class="text-center mt-5 mb-5">
+    <a href="https://github.com/haminee01?tab=repositories" target="_blank">GitHub Repository.</a>
+  </footer>
+
+  <script>
+    const ctx = document.getElementById('myChart').getContext('2d');
+    new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['June', 'July', 'August'],
+        datasets: [{
+          label: 'Votes',
+          data: [2.53, 3.72, 1.304],
+          backgroundColor: [
+            'rgba(255, 99, 132, 0.2)',
+            'rgba(255, 159, 64, 0.2)',
+            'rgba(255, 205, 86, 0.2)',
+            'rgba(75, 192, 192, 0.2)',
+            'rgba(54, 162, 235, 0.2)',
+            'rgba(153, 102, 255, 0.2)',
+            'rgba(201, 203, 207, 0.2)'
+          ],
+          borderColor: [
+            'rgb(255, 99, 132)',
+            'rgb(255, 159, 64)',
+            'rgb(255, 205, 86)',
+            'rgb(75, 192, 192)',
+            'rgb(54, 162, 235)',
+            'rgb(153, 102, 255)',
+            'rgb(201, 203, 207)'
+          ],
+          borderWidth: 1
+        }]
+      }
+    });</script>
 </body>
 
 </html>
